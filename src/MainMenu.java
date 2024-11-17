@@ -71,7 +71,7 @@ public class MainMenu {
             gbc.fill = GridBagConstraints.HORIZONTAL; 
             
             JButton buttonCliente = new JButton("CLIENTE");
-            JButton buttonFuncionario = new JButton("FUNCIONÁRIO");
+            JButton buttonFuncionario = new JButton("FUNCIONARIO");
             JButton buttonSair = new JButton("SAIR DO PROGRAMA");
 
             // Definindo largura e altura dos botões
