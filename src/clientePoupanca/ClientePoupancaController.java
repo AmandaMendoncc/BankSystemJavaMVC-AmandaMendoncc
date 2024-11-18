@@ -1,7 +1,6 @@
 package clientePoupanca;
 
 import java.io.*;
-import java.util.List;
 
 public class ClientePoupancaController {
 
@@ -14,7 +13,7 @@ public class ClientePoupancaController {
             // Se for o primeiro cliente, escreve o cabeçalho
             File arquivo = new File(CAMINHO_ARQUIVO);
             if (arquivo.length() == 0) {
-                writer.write("Nome,CPF,Agência,Conta,DDD Telefone,Telefone"); // Cabeçalho
+                writer.write("Nome,CPF,Agência,Conta,Saldo,DDD Telefone,Telefone,Estado,Cidade,Bairro,Logradouro,Casa,Complemento,CEP,Senha"); // Cabeçalho
                 writer.newLine();
             }
 
@@ -23,8 +22,17 @@ public class ClientePoupancaController {
                     clientePoupanca.getCpf() + "," +
                     clientePoupanca.getAgencia() + "," +
                     clientePoupanca.getConta() + "," +
+                    clientePoupanca.getSaldo() + "," +
                     clientePoupanca.getDddTelefone() + "," +
-                    clientePoupanca.getNumerotelefone());
+                    clientePoupanca.getNumerotelefone() + "," +
+                    clientePoupanca.getEstadoEndereco() + "," +
+                    clientePoupanca.getCidadeEndereco() + "," +
+                    clientePoupanca.getBairroEndereco() + "," +
+                    clientePoupanca.getLogradouroEndereco() + "," +
+                    clientePoupanca.getNumeroEndereco() + "," +
+                    clientePoupanca.getComplementoEndereco() + "," +
+                    clientePoupanca.getCepEndereco() + "," +
+                    clientePoupanca.getSenha());
             writer.newLine();
 
             System.out.println("Cliente Poupança salvo com sucesso.");
@@ -45,15 +53,4 @@ public class ClientePoupancaController {
         }
     }
 
-    public static void main(String[] args) {
-        // Exemplo de clientes poupança
-        ClientePoupancaModel cliente1 = new ClientePoupancaModel("José Santos", "112.233.445-66", "10/10/1975", "003", "67890", "12", "99999-1234",
-                "Avenida C", "456", "Sala 202", "Centro", "Belo Horizonte", "MG", "30000-000", "senha789");
-
-        // Salva o cliente poupança no arquivo
-        salvarClientePoupanca(cliente1);
-
-        // Carrega os clientes poupança do arquivo (apenas para demonstração)
-        carregarClientesPoupanca();
-    }
 }

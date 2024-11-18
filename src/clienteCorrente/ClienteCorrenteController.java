@@ -2,7 +2,6 @@ package clienteCorrente;
 
 
 import java.io.*;
-import java.util.List;
 
 public class ClienteCorrenteController {
 
@@ -15,7 +14,7 @@ public class ClienteCorrenteController {
             // Se for o primeiro cliente, escreve o cabeçalho
             File arquivo = new File(CAMINHO_ARQUIVO);
             if (arquivo.length() == 0) {
-                writer.write("Nome,CPF,Agência,Conta,DDD Telefone,Telefone,Limite,Data Vencimento"); // Cabeçalho
+                writer.write("Nome,CPF,Agência,Conta,Saldo,DDD Telefone,Telefone,Limite,Data Vencimento,Estado,Cidade,Bairro,Logradouro,Casa, Complemento,CEP,senha "); // Cabeçalho
                 writer.newLine();
             }
 
@@ -24,10 +23,20 @@ public class ClienteCorrenteController {
                     clienteCorrente.getCpf() + "," +
                     clienteCorrente.getAgencia() + "," +
                     clienteCorrente.getConta() + "," +
+                    clienteCorrente.getSaldo() + "," +
                     clienteCorrente.getDddTelefone() + "," +
                     clienteCorrente.getNumerotelefone() + "," +
                     clienteCorrente.getLimite() + "," +
-                    clienteCorrente.getDataVencimento());
+                    clienteCorrente.getDataVencimento() + ',' +
+                    clienteCorrente.getEstadoEndereco() + ',' +
+                    clienteCorrente.getCidadeEndereco() + ',' +
+                    clienteCorrente.getBairroEndereco() + ',' +
+                    clienteCorrente.getLogradouroEndereco() + ',' +
+                    clienteCorrente.getNumeroEndereco() + ',' +
+                    clienteCorrente.getComplementoEndereco() + ',' +
+                    clienteCorrente.getCepEndereco() + ',' +
+                    clienteCorrente.getSenha() + ',');
+                    
             writer.newLine();
 
             System.out.println("Cliente Corrente salvo com sucesso.");
@@ -48,15 +57,4 @@ public class ClienteCorrenteController {
         }
     }
 
-    public static void main(String[] args) {
-        // Exemplo de clientes correntes
-        ClienteCorrenteModel cliente1 = new ClienteCorrenteModel("pedro Silva", "123.3434.789-00", "01/11/1980", "001", "3454", "11", "34344-8888",
-                "Rua A", "123", "Apto 101", "Centro", "São Paulo", "SP", "01001-000", "senha123", 5000.0, "2025-12-31");
-
-        // Salva o cliente corrente no arquivo
-        salvarClienteCorrente(cliente1);
-
-        // Carrega os clientes correntes do arquivo (apenas para demonstração)
-        carregarClientesCorrente();
-    }
 }

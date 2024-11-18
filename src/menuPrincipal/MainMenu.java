@@ -1,3 +1,4 @@
+package menuPrincipal;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -6,7 +7,7 @@ import java.io.IOException;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
-public class MainMenu {
+public class MainMenu extends JFrame {
 
     public class Caminhos {
         private String logoPrincipal = "src/images/dv.png";
@@ -20,7 +21,8 @@ public class MainMenu {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Banco Malvader");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(1280, 720);
+            frame.setExtendedState(JFrame.MAXIMIZED_BOTH); // Agora no frame correto
+            frame.setUndecorated(false); // Opcional, remova bordas se quiser
             Image icon = Toolkit.getDefaultToolkit().getImage("src/images/dv.png");
             frame.setIconImage(icon);
 

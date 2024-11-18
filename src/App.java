@@ -1,9 +1,8 @@
-import funcionario.FuncionarioView;
-import javax.swing.SwingUtilities;
+import menuPrincipal.MainMenu;
 
 public class App {
     public static void main(String[] args) {
-        //new MainMenu().MenuPrincipal();
-       SwingUtilities.invokeLater(FuncionarioView::new);
+        new MainMenu().MenuPrincipal();
+      // new ClienteMenuView();
     }
 }

@@ -10,6 +10,7 @@ public class ClienteModel {
     private LocalDate dataNascimento;
     private String agencia;
     private String conta;
+    private Double saldo;
     private String dddTelefone;
     private String numerotelefone;
     private String logradouroEndereco;
@@ -22,7 +23,7 @@ public class ClienteModel {
     private String senha;
 
 
-    public ClienteModel(String nome, String cpf, String dataNascimento, String agencia, String conta,
+    public ClienteModel(String nome, String cpf, String dataNascimento, String agencia, String conta, Double saldo,
                         String dddTelefone, String numerotelefone, String logradouroEndereco, String numeroEndereco,
                         String complementoEndereco, String bairroEndereco, String cidadeEndereco, String estadoEndereco,
                         String cepEndereco, String senha) {
@@ -31,6 +32,7 @@ public class ClienteModel {
         this.dataNascimento = parseDataNascimento(dataNascimento);
         this.agencia = agencia;
         this.conta = conta;
+        this.saldo = saldo;
         this.dddTelefone = dddTelefone;
         this.numerotelefone = numerotelefone;
         this.logradouroEndereco = logradouroEndereco;
@@ -70,6 +72,12 @@ public class ClienteModel {
         return conta;
     }
 
+    public Double getSaldo(){
+        return saldo;
+    }
+    public void setSaldo(Double saldo){
+        this.saldo = saldo;
+    }
     public String getDddTelefone() {
         return dddTelefone;
     }

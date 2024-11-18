@@ -8,13 +8,10 @@ public class ClienteCorrenteModel extends ClienteModel {
     private double limite; 
     private LocalDate dataVencimento; 
 
-    public ClienteCorrenteModel(String nome, String cpf, String dataNascimento, String agencia, String conta,
-                           String dddTelefone, String numerotelefone, String logradouroEndereco, String numeroEndereco,
-                           String complementoEndereco, String bairroEndereco, String cidadeEndereco, String estadoEndereco,
-                           String cepEndereco, String senha, double limite, String dataVencimento) {
+    public ClienteCorrenteModel(String nome, String cpf, String dataNascimento, String agencia, String conta, Double saldo, String dddTelefone, String numerotelefone, String logradouroEndereco, String numeroEndereco, String complementoEndereco, String bairroEndereco, String cidadeEndereco, String estadoEndereco, String cepEndereco, String senha, double limite, String dataVencimento) {
      
 
-        super(nome, cpf, dataNascimento, agencia, conta, dddTelefone, numerotelefone, logradouroEndereco,
+        super(nome, cpf, dataNascimento, agencia, conta, saldo, dddTelefone, numerotelefone, logradouroEndereco,
                 numeroEndereco, complementoEndereco, bairroEndereco, cidadeEndereco, estadoEndereco,
                 cepEndereco, senha);
 

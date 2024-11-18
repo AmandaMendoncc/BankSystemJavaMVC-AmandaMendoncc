@@ -1,13 +1,12 @@
 package clientePoupanca;
 import cliente.ClienteModel;
-import java.time.LocalDate;
 
 public class ClientePoupancaModel extends ClienteModel {
 
 
     public ClientePoupancaModel(
         String nome, String cpf, String dataNascimento,
-        String agencia, String conta,
+        String agencia, String conta, Double saldo,
         String dddTelefone, String numerotelefone,
         String logradouroEndereco, String numeroEndereco,
         String complementoEndereco, String bairroEndereco,
@@ -15,7 +14,7 @@ public class ClientePoupancaModel extends ClienteModel {
         String cepEndereco, String senha) {
 
 
-        super(nome, cpf, dataNascimento, agencia, conta, dddTelefone, numerotelefone, logradouroEndereco,
+        super(nome, cpf, dataNascimento, agencia, conta, saldo, dddTelefone, numerotelefone, logradouroEndereco,
             numeroEndereco, complementoEndereco, bairroEndereco, cidadeEndereco, estadoEndereco,
             cepEndereco, senha);
     }

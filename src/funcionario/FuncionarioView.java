@@ -1,10 +1,10 @@
 package funcionario;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import javax.swing.*;
+import menuPrincipal.MainMenu;
 
 public class FuncionarioView extends JFrame {
 
@@ -14,7 +14,8 @@ public class FuncionarioView extends JFrame {
         // Configuração inicial da janela
         setTitle("Cadastro de Funcionários");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 600);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //setSize(800, 600);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
 
@@ -171,6 +172,8 @@ public class FuncionarioView extends JFrame {
                     );
                     controller.salvarFuncionario(funcionario);
                     JOptionPane.showMessageDialog(null, "Funcionário salvo com sucesso!");
+                    dispose();
+                    new MainMenu().MenuPrincipal();
                     
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "Erro ao salvar funcionário: " + ex.getMessage());
